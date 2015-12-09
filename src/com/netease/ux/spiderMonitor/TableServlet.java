@@ -33,11 +33,16 @@ public class TableServlet extends HttpServlet {
 		int periodSize = Integer.parseInt(request.getParameter("periodSize"));
 		String tableName = request.getParameter("tableName");
 		String tableField = request.getParameter("tableField");
-		
+		int fieldNum = 1;
+		try{
+			fieldNum = Integer.parseInt(request.getParameter("fieldNum"));
+		}catch (NumberFormatException e){
+			System.out.println(tableName + " " +  tableField);
+		}
 		TableData tableData;
 		try {
 			tableData = new TableData();
-			out.write(tableData.getTable(tableName,tableField,startDay,periodSize));
+			out.write(tableData.getTable(tableName,tableField,startDay,periodSize,fieldNum));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

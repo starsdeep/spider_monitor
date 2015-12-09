@@ -71,7 +71,7 @@ public class SQLHelper implements java.io.Serializable{
 		dbUrl=dbProp.getProperty("dbUrl");
 		dbUsername=dbProp.getProperty("dbUsername");
 		dbPassword=dbProp.getProperty("dbPassword");
-		System.out.println("[mylog:] " + dbUrl);
+		System.out.println("[dhHelper:] " + dbUrl);
 	}
 	
 	private boolean connect_db(){
@@ -122,7 +122,7 @@ public class SQLHelper implements java.io.Serializable{
 			connect_db(); 
 			stmt=conn.createStatement();
 			//logger.info("[group:" + this.getClass().getName() + "][message: ][ the sqlcmd is: " + sqlcmd +"]");
-			System.out.println("mylog: the sqlcmd is," + sqlcmd );
+			//System.out.println("dhHelperper: the sqlcmd is," + sqlcmd );
 			ResultSet rs=stmt.executeQuery(sqlcmd);
 			ResultSetMetaData rsmd = rs.getMetaData();
 			int fieldNum = rsmd.getColumnCount();
@@ -136,6 +136,7 @@ public class SQLHelper implements java.io.Serializable{
 				}
 				recordList.add(singleRecord);	
 			}
+			System.out.println("dhHelper: " + sqlcmd + " okay\n number of records retrieved:" + recordList.size());  
 			rs.close();
 			close();
 			return recordList;

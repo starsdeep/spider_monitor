@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 	<div class="row" style="margin:auto">
-		<div class="col-lg-8" style="margin:auto;">
+		<div class="col-lg-9" style="margin:auto;">
 
 			<div class="panel panel-default" style="margin-top: 30px">
 				<div class="panel-heading">
@@ -10,7 +10,7 @@
 				</div>
 
 				<div id="page_ip" name="table_div" tableName="page" tableField="ip" startDay="2015-10-12"
-					periodSize=7 margin=></div>
+					periodSize=7 fieldNum=1></div>
 
 			</div>
 
@@ -20,7 +20,7 @@
 				</div>
 
 				<div id="page_source" name="table_div" tableName="page" tableField="source_id"
-					startDay="2015-10-12" periodSize=7></div>
+					startDay="2015-10-12" periodSize=7 fieldNum=1></div>
 
 			</div>
 
@@ -30,8 +30,11 @@
 					</button>
 				</div>
 
+				
+					
 				<div id="page_game" style="display: none;" name="table_div" tableName="page"
-					tableField="game_id" startDay="2015-10-12" periodSize=7></div>
+					tableField="game_id, source_id" startDay="2015-10-12" periodSize=7 fieldNum=2></div>	
+					
 			</div>
 		</div>
 	</div>
